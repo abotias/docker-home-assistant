@@ -1,0 +1,10 @@
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:latest
+    container_name: homeassistant
+    environment:
+      - TZ=Europe/Madrid
+    volumes:
+      - ./config:/config
+    network_mode: host
+    restart: unless-stopped
